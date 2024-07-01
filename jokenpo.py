@@ -1,46 +1,55 @@
 from random import randint
 from time import sleep
 
-item = ('PEDRA', 'PAPEL', 'TESOURA')
-computador = randint(0, 2)
+cores = {'vermelho': '\033[31m',
+         'verde': '\033[32m',
+         'azul': '\033[34m',
+         'limpa': '\033[m'}
 
-print('Vamos jogar PEDRA, PAPEL E TESOURA')
-sleep(1)
+while True:
+    item = ('PEDRA', 'PAPEL', 'TESOURA')
+    computador = randint(0, 2)
 
-print('''
+    print('\nVamos jogar PEDRA, PAPEL E TESOURA')
+
+    print('''
 OPÇÔES:
 [0] PEDRA
 [1] PAPEL
 [2] TESOURA
+[x] Fim de Jogo
 ''')
-sleep(1)
 
-jogador = int(input('Qual é a sua jogada? '))
+    jogador = int(input('Qual é a sua jogada? '))
 
-print('\nJO')
-sleep(0.7)
-print('KEN')
-sleep(0.7)
-print('PO')
-sleep(0.7)
+    if jogador < 0 or jogador > 2:
+        break
 
-print(f'''
+    print('\nJO')
+    sleep(0.7)
+    print('KEN')
+    sleep(0.7)
+    print('PO')
+    sleep(0.7)
+
+    print(f'''
 O computador escolheu {item[computador]}
 O jogador escolheu {item[jogador]}
 ''')
 
-if computador == jogador:
-    print('EMPATE')
-else:
-    if computador == 0 and jogador == 1:
-        print('JOGADOR vence')
-    elif computador == 1 and jogador == 0:
-        print('COMPUTADOR vence')
-    elif computador == 2 and jogador == 0:
-        print('JOGADOR vence')
-    elif computador == 0 and jogador == 2:
-        print('COMPUTADOR vence')
-    elif computador == 2 and jogador == 1:
-        print('COMPUTADOR vence')
+    if computador == jogador:
+        print(f'{cores["azul"]}EMPATE{cores["limpa"]}')
     else:
-        print('JOGADOR vence')
+        if computador == 0 and jogador == 1:
+            print(f'{cores["verde"]}JOGADOR{cores["limpa"]} vence')
+        elif computador == 1 and jogador == 0:
+            print(f'{cores["vermelho"]}COMPUTADOR{cores["limpa"]} vence')
+        elif computador == 2 and jogador == 0:
+            print(f'{cores["verde"]}JOGADOR{cores["limpa"]} vence')
+        elif computador == 0 and jogador == 2:
+            print(f'{cores["vermelho"]}COMPUTADOR{cores["limpa"]} vence')
+        elif computador == 2 and jogador == 1:
+            print(f'{cores["vermelho"]}COMPUTADOR{cores["limpa"]} vence')
+        else:
+            print(f'{cores["verde"]}JOGADOR{cores["limpa"]} vence')
+print('\nFIM DE JOGO')
