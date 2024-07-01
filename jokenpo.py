@@ -5,6 +5,7 @@ item = ('PEDRA', 'PAPEL', 'TESOURA')
 computador = randint(0, 2)
 
 print('Vamos jogar PEDRA, PAPEL E TESOURA')
+sleep(1)
 
 print('''
 OPÇÔES:
@@ -12,6 +13,7 @@ OPÇÔES:
 [1] PAPEL
 [2] TESOURA
 ''')
+sleep(1)
 
 jogador = int(input('Qual é a sua jogada? '))
 
