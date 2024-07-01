@@ -6,18 +6,19 @@ cores = {'vermelho': '\033[31m',
          'azul': '\033[34m',
          'limpa': '\033[m'}
 
+print('\nVamos jogar PEDRA, PAPEL E TESOURA')
+
 while True:
     item = ('PEDRA', 'PAPEL', 'TESOURA')
     computador = randint(0, 2)
 
-    print('\nVamos jogar PEDRA, PAPEL E TESOURA')
 
     print('''
 OPÇÔES:
 [0] PEDRA
 [1] PAPEL
 [2] TESOURA
-[x] Fim de Jogo
+[3] Fim de Jogo
 ''')
 
     jogador = int(input('Qual é a sua jogada? '))
